@@ -1,0 +1,73 @@
+.hero {
+    @include breakPoints-up(large) {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-areas: 
+            'picture picture new'
+            'text button new';
+        gap: 1.5rem;
+    }
+
+    &-image {
+        background-image: url('/assets/images/image-web-3-mobile.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 20.5rem;
+        margin-bottom: 1.5rem;
+
+        @include breakPoints-up(large) {
+            grid-area: picture;
+            background-image: url('/assets/images/image-web-3-desktop.jpg');
+        }
+    }
+
+    &-text {
+        h1 {
+            font-weight: 700;
+            font-size: 2.8rem;
+        }
+        @include breakPoints-up(large) {
+            grid-area: text;
+        }
+    }
+
+    &-paragraph {
+        p {
+            color: $darkGrayishBlue;
+        }
+
+        .hero-button {
+            margin-top: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        @include breakPoints-up(large) {
+            grid-area: button;
+        }
+    }
+
+    &-new {
+        background-color: $veryDarkBlue;
+        padding: 1rem;
+        margin-bottom: 3rem;
+
+        h1 {
+            color: $softOrange;
+            font-size: 1.9rem;
+        }
+
+        h2 {
+            margin-top: 1.6rem;
+            color: $offWhite;
+        }
+
+        h4 {
+            color: $grayishBlue;
+        }
+
+        @include breakPoints-up(large) {
+            grid-area: new;
+        }
+    }
+}
