@@ -1,0 +1,308 @@
+@-webkit-keyframes fade-in {
+  from {
+    visibility: none;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    visibility: none;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: none;
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: none;
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.fade-in {
+  -webkit-animation: fade-in 300ms ease-in-out forwards;
+          animation: fade-in 300ms ease-in-out forwards;
+}
+
+.fade-out {
+  -webkit-animation: fade-out 300ms ease-in-out forwards;
+          animation: fade-out 300ms ease-in-out forwards;
+}
+
+.move-out {
+  transform: translate(100%, 0);
+  transition: transform 1s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+.move-in {
+  transform: translate(0%, 0);
+  transition: transform 1s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 0.937rem;
+  color: hsl(240deg, 100%, 5%);
+  font-weight: 400;
+  background-color: hsl(36deg, 100%, 99%);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  margin-top: 0px;
+}
+
+.flex {
+  display: flex;
+}
+.flex-jc-sp {
+  justify-content: space-between;
+}
+.flex-jc-c {
+  justify-content: center;
+}
+.flex-ai-c {
+  align-items: center;
+}
+
+@media (max-width: 63.9375em) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 64em) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
+.container {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+button, .button {
+  color: hsl(36deg, 100%, 99%);
+  background-color: hsl(5deg, 85%, 63%);
+  padding: 0.8rem 1.9rem;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.header.open .header-toggle > span:first-child {
+  transform: rotate(45deg);
+}
+.header.open .header-toggle > span:nth-child(2) {
+  opacity: 0;
+}
+.header.open .header-toggle > span:last-child {
+  transform: rotate(-45deg);
+}
+.header-toggle {
+  z-index: 900;
+}
+.header nav {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.header-logo img {
+  width: 2.9rem;
+}
+.header-toggle > span {
+  display: block;
+  width: 27px;
+  height: 2px;
+  background-color: hsl(240deg, 100%, 5%);
+  transform-origin: 6px 1px;
+  transition: all 300ms ease-in-out;
+}
+.header-toggle > span:not(:last-child) {
+  margin-bottom: 3px;
+}
+.header-links a {
+  font-size: 0.937rem;
+  color: hsl(236deg, 13%, 42%);
+}
+.header-links a:not(:last-child) {
+  margin-right: 30px;
+}
+.header-links a:hover {
+  color: hsl(35deg, 77%, 62%);
+}
+.header .overlay {
+  position: fixed;
+  opacity: 0;
+  bottom: 0;
+  top: 5.125rem;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(hsl(233deg, 8%, 79%), transparent);
+}
+.header-menu {
+  background-color: white;
+  position: absolute;
+  width: 60%;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.header-menu a {
+  color: hsl(236deg, 13%, 42%);
+  font-weight: 400;
+  padding: 0.625rem;
+  display: block;
+}
+.header-menu a:first-child {
+  padding-top: 9.8125rem;
+}
+
+@media (min-width: 64em) {
+  .hero {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-areas: "picture picture new" "text button new";
+    gap: 1.5rem;
+  }
+}
+.hero-image {
+  background-image: url("/assets/images/image-web-3-mobile.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 20.5rem;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 64em) {
+  .hero-image {
+    grid-area: picture;
+    background-image: url("/assets/images/image-web-3-desktop.jpg");
+  }
+}
+.hero-text h1 {
+  font-weight: 700;
+  font-size: 2.8rem;
+}
+@media (min-width: 64em) {
+  .hero-text {
+    grid-area: text;
+  }
+}
+.hero-paragraph p {
+  color: hsl(236deg, 13%, 42%);
+}
+.hero-paragraph .hero-button {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+@media (min-width: 64em) {
+  .hero-paragraph {
+    grid-area: button;
+  }
+}
+.hero-new {
+  background-color: hsl(240deg, 100%, 5%);
+  padding: 1rem;
+  margin-bottom: 3rem;
+}
+.hero-new h1 {
+  color: hsl(35deg, 77%, 62%);
+  font-size: 1.9rem;
+}
+.hero-new h2 {
+  margin-top: 1.6rem;
+  color: hsl(36deg, 100%, 99%);
+}
+.hero-new h4 {
+  color: hsl(233deg, 8%, 79%);
+}
+@media (min-width: 64em) {
+  .hero-new {
+    grid-area: new;
+  }
+}
+
+.feature {
+  display: flex;
+}
+@media (max-width: 63.9375em) {
+  .feature {
+    flex-direction: column;
+  }
+}
+.feature-item {
+  flex: 1;
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.feature-item-icon img {
+  height: 7.2rem;
+}
+.feature-item-text {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.feature-item-text .count {
+  color: hsl(233deg, 8%, 79%);
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.feature-item-text .title {
+  color: hsl(240deg, 100%, 5%);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.feature-item-text .description {
+  color: hsl(233deg, 8%, 79%);
+  font-size: 1rem;
+  font-weight: 300;
+}/*# sourceMappingURL=style.css.map */
