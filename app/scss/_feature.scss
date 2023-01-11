@@ -1,13 +1,45 @@
 .feature {
-    
+    display: flex;
+    @include breakPoints-down(medium) {
+        flex-direction: column;
+    }
+
     &-item {
+        flex: 1;
+        display: flex;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
 
         &-icon {
-            height: 2rem;
+            img {
+                height: 7.2rem;
+            }
         }
 
         &-text {
+            margin-left: 1rem;
+            margin-right: 1rem;
 
+
+            .count {
+                color: $grayishBlue;
+                font-size: 2rem;
+                font-weight: 500;
+                margin-bottom: 0.5rem;
+            }
+
+            .title {
+                color: $veryDarkBlue;
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+            }
+
+            .description {
+                color: $grayishBlue;
+                font-size: 1rem;
+                font-weight: 300;
+            }
         }
     }
 }
